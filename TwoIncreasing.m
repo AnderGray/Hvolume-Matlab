@@ -3,46 +3,49 @@
 %   and checks if it is positive. If H-volume is postive for all values
 %   function is n-increasing.
 %
+%   In parallel, this function will take ~13.6 hours to complete, 
+%   sampling the H-volume 41*10^7 times
+%
 %       Ander Gray
 %       Ander.gray@liverpool.ac.uk
 %%%
 
-Nsamples = 10^9;
+Nsamples  = 10^7;
+NperBatch = 10^6;
+Nbacthes  = Nsamples/NperBatch;
 Npar = 10;
 
 parpool(Npar);
 
 
-r = -1:0.01:1;
-
-C3 = @(x) CBool(0.5,x(:,1), x(:,2));
-C2 = @(x) CBool(x(:,1), x(:,2), x(:,3));
-
+r = -1:0.05:1;
 
 for j = 1:length(r)
     C = @(x) CBool(x(:,1), x(:,2), r(j));
-    parfor i =1:Nsamples
+    tic
+    for k = 1: Nbacthes
+        for i =1:NperBatch
 
-        xs = sort(rand(2,1)); ys = sort(rand(2,1));
-        %r = sort(2*rand(2,1)-1);
+            xs = sort(rand(2,1)); ys = sort(rand(2,1));
+            %r = sort(2*rand(2,1)-1);
 
-        %H = Hvolume(C2,xs,ys,r);
-        H = Hvolume(C,xs,ys);
+            %H = Hvolume(C2,xs,ys,r);
+            H = Hvolume(C,xs,ys);
 
-        if H < -0.000001
-            %printf("Function is not n-increating for ")
-           fprintf("Function is not n-increasing:\n")
-           fprintf("\nVh = %f       ||    xs = [",H)
-           fprintf("%g %g",xs)
-           fprintf("], ys = [")
-           fprintf("%g %g",ys)
-           fprintf("], r = [")
-           fprintf("%f",r(j))
-           fprintf("]    \n\n")
+            if H < -0.000001
+                %printf("Function is not n-increating for ")
+               fprintf("Function is not n-increasing:\n")
+               fprintf("\nVh = %f       ||    xs = [",H)
+               fprintf("%g %g",xs)
+               fprintf("], ys = [")
+               fprintf("%g %g",ys)
+               fprintf("], r = [")
+               fprintf("%f",r(j))
+               fprintf("]    \n\n")
+            end
         end
     end
-    
-    
+    toc
     if ~mod(j,20);fprintf("Finished r = %f\n",r(j));end
     
 end

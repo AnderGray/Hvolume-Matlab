@@ -15,6 +15,7 @@ C3 = @(x) CBool(0.5,x(:,1), x(:,2));
 C2 = @(x) CBool(x(:,1), x(:,2), x(:,3));
 C = @(x) CBool(x(:,1), x(:,2), 0.7);
 
+
 for i =1:Nsamples
     
     xs = sort(rand(2,1)); ys = sort(rand(2,1));
