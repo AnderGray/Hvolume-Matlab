@@ -3,17 +3,17 @@
 %   and checks if it is positive. If H-volume is postive for all values
 %   function is n-increasing.
 %
-%   In parallel, this function will take ~13.6 hours to complete, 
-%   sampling the H-volume 41*10^7 times
+%   In parallel, this function will take ~3.4 hours to complete, on 40 cores
+%   sampling the H-volume 10^7 times per correlation point (41)
 %
 %       Ander Gray
 %       Ander.gray@liverpool.ac.uk
 %%%
 
 Nsamples  = 10^7;
-NperBatch = 10^6;
+NperBatch = 2.5*10^5;
 Nbacthes  = Nsamples/NperBatch;
-Npar = 10;
+Npar = 40;
 
 parpool(Npar);
 
@@ -23,7 +23,7 @@ r = -1:0.05:1;
 for j = 1:length(r)
     C = @(x) CBool(x(:,1), x(:,2), r(j));
     tic
-    for k = 1: Nbacthes
+    parfor k = 1: Nbacthes
         for i =1:NperBatch
 
             xs = sort(rand(2,1)); ys = sort(rand(2,1));

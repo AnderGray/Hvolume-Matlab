@@ -6,7 +6,7 @@ qsub -r y -j y <<EOF
 #\$ -o output.dat
 #\$ -e error.dat
 #\$ -N "AG1KSamples"
-#\$ -pe smp 10
+#\$ -pe smp 40
 
 echo "Strating job: AnderNasa"
 
