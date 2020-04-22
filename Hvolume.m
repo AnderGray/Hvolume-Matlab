@@ -7,7 +7,7 @@ function volume = Hvolume(varargin)
     %   measure is an anonymous function of dimension n and J1 to Jn are
     %   n intervals defining the n-box.
     %
-    %   For details pg 78 of probabilistic metric spaces.
+    %   For details: pg 78 of probabilistic metric spaces.
     %   
     %                   Author: Ander Gray
     %                   Email: ander.gray@liverpool.ac.uk    
@@ -42,7 +42,6 @@ function volume = Hvolume(varargin)
         if mod(Ns,2) == 1                             % If number of lower bounds are odd
             sign = -1;                                % measure value will be subtracted
         end
-        
         measureVals(i) = sign * measureVals(i);
     end
     

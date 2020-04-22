@@ -25,9 +25,13 @@ function X = cartprod(Js)
 %   This function requires IND2SUBVECT, also available (I hope) on the MathWorks 
 %   File Exchange site.
 
+if numel(Js) == 2
+    X = Js';
+    return 
+end
 
 numSets = length(Js);
-for i = 1:numSets,
+for i = 1:numSets
     thisSet = sort(Js(i,:));
     if ~isequal(prod(size(thisSet)),length(thisSet)),
         error('All inputs must be vectors.')
