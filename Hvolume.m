@@ -36,7 +36,10 @@ function volume = Hvolume(varargin)
     for i = 1:Nvertix
         measureVals(i) = measure(vertices(i,:));      % Eval vertex in measure
         
-        Ns = sum(any(vertices(i,:) == Js(:,1)));      % Find how many vertices are lower bounds
+        Ns = 0;
+        for j=1:nDims
+            Ns = + Ns + vertices(i,j) == Js(j,1);     % Find how many vertices are lower bounds
+        end                                           % Can someone please do this vectoriesed?
         
         sign = 1;
         if mod(Ns,2) == 1                             % If number of lower bounds are odd
