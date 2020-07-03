@@ -18,9 +18,6 @@ The general formula is:
 
 where the sum is taken over every vertex of J. 
 
-This function computes the H-volume in n dimensions.
-
-
 **Example**
 ---
 1D
