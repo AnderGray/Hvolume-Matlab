@@ -12,4 +12,8 @@ In two dimensions you wish to calculate the probability in [x1, x2] x [y1, y2]. 
 
 ![Image of Yaktocat](https://github.com/AnderGray/Hvolume/blob/master/images/Hvolumes.png)
 
-If the H-volume, then your function is n-increasing
+The general formula is:
+
+![Image of Yaktocat](https://github.com/AnderGray/Hvolume/blob/master/images/HvolumeFormula.png)
+
+
