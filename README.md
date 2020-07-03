@@ -41,7 +41,7 @@ H2 =
     0.2500
 
 ```
-3-D
+3D
 ```MATLAB
 >> Rho3 =eye(3);
 >> C3 = @(x) copulacdf('Gaussian', [x(1),x(2),x(3)],Rho3);
@@ -52,7 +52,7 @@ H3 =
     0.1250
     
 ```
-4-D
+4D
 ```MATLAB
 >> Rho4 =eye(4);
 >> C4 = @(x) copulacdf('Gaussian', [x(1),x(2),x(3),x(4)],Rho4);
