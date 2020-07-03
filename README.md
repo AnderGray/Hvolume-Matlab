@@ -18,8 +18,14 @@ The general formula is:
 
 where the sum is taken over every vertex of *J*. 
 
-**Example**
+Code
 ---
+
+Syntax: *measure* is an anonymous function of dimension *n* and *J1* to *Jn* are
+*n* intervals defining the *n*-box.
+```MATLAB
+Vol = Hvolume(measure, J1, J2, .. , Jn)
+```
 1D
 ```MATLAB
 >> C1 = @(x) unifcdf(x,0,1);
