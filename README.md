@@ -1,16 +1,15 @@
 # Hvolume
 
-Calculates the H-volume of a n-box J in a space with some measure H. The n-box J is some higher dimensional rectangle made from the carteesian product of n intervals:
+Calculates the H-volume of a n-box J in a space with some measure H. Usefull in probability theory, the H-volume computes the mass within some n-box from a multivartiate cdf H. 
 
+The n-box J is a hyper-rectangle made from the carteesian product of n intervals:
 
+![Image of Yaktocat](https://github.com/AnderGray/Hvolume/blob/master/images/Box.png)
 
-Calculates the probability mass in a n-box J in a space with some distribution function H (cdf).
+In two dimensions you wish to calculate the probability in [x1, x2] x [y1, y2]. The two dimensional calculation is:
 
-Usefull in probability theory, the H-volume computes the mass within some n-box from a multivartiate cdf H. 
+![Image of Yaktocat](https://github.com/AnderGray/Hvolume/blob/master/images/2-volume.png)
 
-The two dimensional calculation is:
-
-
-
+![Image of Yaktocat](https://github.com/AnderGray/Hvolume/blob/master/images/Hvolumes.png)
 
 If the H-volume, then your function is n-increasing
