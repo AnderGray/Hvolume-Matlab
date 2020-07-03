@@ -1,8 +1,8 @@
 # Hvolume
 
-Calculates the H-volume (generalised volume) of an n-box in a space with some measure H. Usefull in probability theory, the H-volume computes the mass within some n-box from a multivartiate cdf H. 
+Calculates the *H-volume* (generalised volume) of an *n-box* in a space with some measure *H*. Usefull in probability theory, the *H*-volume computes the mass within some *n*-box from a multivartiate cdf *H*. 
 
-An n-box J is a hyper-rectangle made from the carteesian product of n intervals:
+An n-box *J* is a hyper-rectangle made from the carteesian product of n intervals:
 
 ![Image of Yaktocat](https://github.com/AnderGray/Hvolume/blob/master/images/Box.png)
 
@@ -16,7 +16,7 @@ The general formula is:
 
 ![Image of Yaktocat](https://github.com/AnderGray/Hvolume/blob/master/images/HvolumeFormula.png)
 
-where the sum is taken over every vertex of J. 
+where the sum is taken over every vertex of *J*. 
 
 **Example**
 ---
