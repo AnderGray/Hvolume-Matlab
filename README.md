@@ -20,12 +20,11 @@ where the sum is taken over every vertex of *J*.
 
 Code
 ---
-
-Syntax: *measure* is an anonymous function of dimension *n* and *J1* to *Jn* are
-*n* intervals defining the *n*-box.
 ```MATLAB
 Vol = Hvolume(measure, J1, J2, .. , Jn)
 ```
+*measure* is an anonymous function of dimension *n* and *J1* to *Jn* are *n* intervals defining the *n*-box.
+
 1D
 ```MATLAB
 >> C1 = @(x) unifcdf(x,0,1);
