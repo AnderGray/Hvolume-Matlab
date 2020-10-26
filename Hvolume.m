@@ -11,7 +11,8 @@ function volume = Hvolume(varargin)
     %   dimensional cdf
     %
     %   If H-volume is postive for all box inputs, your function is 
-    %   n-increasing. For cdfs this ensures the probability mass is positive
+    %   n-increasing. For distributions this ensures the probability 
+    %   mass is positive
     %
     %
     %   -----------------------------
@@ -37,7 +38,7 @@ function volume = Hvolume(varargin)
     %           
     %   
     %                   Author: Ander Gray
-    %                   Email: ander.gray@liverpool.ac.uk    
+    %                   Email:  ander.gray@liverpool.ac.uk    
     %%%
     
     nVarg = length(varargin);       % Number of inputs
@@ -62,7 +63,8 @@ function volume = Hvolume(varargin)
         
         Ns = 0;
         for j=1:nDims
-            Ns = Ns + vertices(i,j) == Js(j,1);     % Find how many vertices are lower bounds
+            this = vertices(i,j) == Js(j,1);     % Find how many vertices are lower bounds
+            Ns = Ns + this;
         end                                         % Can someone please do this vectoriesed?
         
         sign = 1;
@@ -77,7 +79,7 @@ end
 
 
 %%%
-% Carteesian product function for N intervals. JS is a matrix of endpoints
+% Carteesian product function for N intervals. JS is a matrix of endpoints 
 %%%
 function verticies = CartProduct(Js)
    
