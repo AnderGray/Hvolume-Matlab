@@ -2,7 +2,7 @@
 
 [![View Hvolume on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/77726-hvolume)
 
-Calculates the *H-volume* (generalised volume) of an *n-box* in a space with some measure *H*. Usefull in probability theory, the *H*-volume computes the mass within some *n*-box from a multivartiate cdf *H*. 
+Calculates the *H-volume* (generalised volume) of an *n-box* in a space with some measure *H*. Usefull in probability theory, the *H*-volume computes the probability measure within some *n*-box from a multivartiate cdf *H*. 
 
 An n-box *J* is a hyper-rectangle made from the carteesian product of n intervals:
 
